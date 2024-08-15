@@ -33,7 +33,7 @@ Second Line:
 
 type TLE struct {
 	// Name
-	name string
+	Name string
 
 	// First Line
 	SatelliteNumber         int
@@ -47,7 +47,7 @@ type TLE struct {
 	ElementSetNumber        int
 
 	// Second Line
-	Incliantion       float64
+	Inclination       float64
 	RAAN              float64
 	Eccentricity      float64
 	ArgumentOfPerigee float64
