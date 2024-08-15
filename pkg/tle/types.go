@@ -37,7 +37,7 @@ type TLE struct {
 
 	// First Line
 	SatelliteNumber         int
-	Classification          string
+	Classification          rune
 	InternationalDesignator string
 	EpochYear               int
 	EpochDay                float64
