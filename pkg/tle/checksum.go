@@ -4,20 +4,12 @@ import (
 	"unicode"
 )
 
-// Function to compute TLE line checksum & confirm TLE validity
-
-/*
-Compute the checksum of the line `str` modulo 10.
-
-The algorithm is simple: add all the numbers in the line, ignoring letters, spaces, periods,
-and plus signs, but assigning +1 to the minus signs. The checksum is the remainder of the
-division by 10.
-*/
-
+// Compute TLE line checksum & confirm TLE validity
 func TLELineChecksum(str string) int {
 	checksum := 0
 
-	for _, c := range str {
+	// Ensure we only process the first 68 characters
+	for i, c := range str[:68] {
 		// Check if `c` is a digit or a minus sign
 		if unicode.IsDigit(c) {
 			digit := int(c - '0')
@@ -29,5 +21,4 @@ func TLELineChecksum(str string) int {
 
 	// Return checksum modulo 10
 	return checksum % 10
-
 }
