@@ -6,7 +6,7 @@ import (
 )
 
 // Prints the TLE information to the provided io.Writer
-func Print(w io.Writer, types *TLE) {
+func PrintTLE(w io.Writer, types *TLE) {
 	fmt.Fprintln(w, "TLE:")
 
 	// Print TLE information
