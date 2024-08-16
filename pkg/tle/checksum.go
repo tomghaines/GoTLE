@@ -8,8 +8,7 @@ import (
 func TLELineChecksum(str string) int {
 	checksum := 0
 
-	// Iterate through all characters except the checksum digit (last character)
-	for _, c := range str[:len(str)-1] {
+	for _, c := range str[:68] {
 		if unicode.IsDigit(c) {
 			digit := int(c - '0')
 			checksum += digit
@@ -18,7 +17,6 @@ func TLELineChecksum(str string) int {
 		}
 	}
 
-	// Return checksum modulo 10
 	return checksum % 10
 }
 
