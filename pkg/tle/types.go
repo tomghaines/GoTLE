@@ -32,26 +32,20 @@ Second Line:
 */
 
 type TLE struct {
-	// Name
-	Name string
-
-	// First Line
+	Name                    string
 	SatelliteNumber         int
-	Classification          rune
 	InternationalDesignator string
 	EpochYear               int
 	EpochDay                float64
+	ElementSetNumber        int
+	Eccentricity            float64
+	Inclination             float64
+	RAAN                    float64
+	ArgumentOfPerigee       float64
+	MeanAnomaly             float64
+	MeanMotion              float64
+	RevolutionNumber        int
+	Bstar                   float64
 	DnO2                    float64
 	DdnO6                   float64
-	Bstar                   float64
-	ElementSetNumber        int
-
-	// Second Line
-	Inclination       float64
-	RAAN              float64
-	Eccentricity      float64
-	ArgumentOfPerigee float64
-	MeanAnomaly       float64
-	MeanMotion        float64
-	RevolutionNumber  int
 }
