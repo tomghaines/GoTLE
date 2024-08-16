@@ -2,9 +2,11 @@ package tle
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 )
 
+// Filter function as provided
 func Filter(slice []string, condition func(string) bool) []string {
 	var result []string
 	for _, v := range slice {
@@ -15,6 +17,7 @@ func Filter(slice []string, condition func(string) bool) []string {
 	return result
 }
 
+// ReadTLE parses a TLE string, verifies checksums, and returns a TLE object or an error.
 func ReadTLE(str string, verifyChecksum bool) (*TLE, error) {
 	// Split the string into lines
 	lines := strings.Split(str, "\n")
@@ -29,6 +32,11 @@ func ReadTLE(str string, verifyChecksum bool) (*TLE, error) {
 	}
 
 	numLines := len(filteredLines)
+
+	fmt.Printf("Filtered Lines (%d):\n", numLines)
+	for i, line := range filteredLines {
+		fmt.Printf("Line %d: %s\n", i+1, line)
+	}
 
 	// Check if the number of lines is 2 or 3
 	if numLines != 2 && numLines != 3 {
